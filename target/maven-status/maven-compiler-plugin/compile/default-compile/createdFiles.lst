@@ -1,0 +1,8 @@
+com\movie\MovieApplication.class
+com\movie\dto\MovieDTO.class
+com\movie\MovieConfig.class
+com\movie\repository\MovieRepository.class
+com\movie\service\impl\MovieServiceImpl.class
+com\movie\service\MovieService.class
+com\movie\repository\Movie.class
+com\movie\controller\MovieController.class
