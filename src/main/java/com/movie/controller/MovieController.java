@@ -23,9 +23,9 @@ public class MovieController {
 		movieService.addMovie(movieDTO);
 	}
 	
-	@GetMapping("/selectmovie")
-	public MovieDTO selectmovie(@PathVariable("Id") String Id, @PathVariable("moviename") String movieName) {
-		MovieDTO movieDTO = movieService.selectMovie(Id, movieName);
+	@GetMapping("/getmovie")
+	public MovieDTO getmovie(@PathVariable("Id") String Id) {
+		MovieDTO movieDTO = movieService.getMovie(Long.getLong(Id));
 		return movieDTO;
 	}
 	

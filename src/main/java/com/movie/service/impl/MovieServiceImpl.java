@@ -1,11 +1,12 @@
 package com.movie.service.impl;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.movie.dto.MovieDTO;
-import com.movie.repository.Movie;
+import com.movie.entity.Movie;
 import com.movie.repository.MovieRepository;
 import com.movie.service.MovieService;
 
@@ -30,10 +31,10 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public MovieDTO selectMovie(String Id, String movieName) {
+	public MovieDTO getMovie(Long Id) {
 		MovieDTO movieDTO = null;
-		if(!Id.equals("") && !movieName.equals("")) {
-			Movie movie = movieRepo.findMovieByMoviename(Long.getLong(Id), movieName);
+		if(!Id.equals("") ) {
+			Optional<Movie> movie = movieRepo.findById(Id);
 			movieDTO = mapper.map(movie, MovieDTO.class);
 		}
 		return movieDTO;

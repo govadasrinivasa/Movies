@@ -1,4 +1,4 @@
-package com.movie.repository;
+package com.movie.entity;
 
 import java.io.Serializable;
 import java.util.Date;
